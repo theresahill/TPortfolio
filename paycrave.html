@@ -26,163 +26,134 @@
 </head>
 
 <body>
-  <header>
+  <nav>
     <ul class="inline">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a class="secondary" href="index.html">Home</a></li>
+      <li><a class="secondary" href="index.html#work">Work</a></li>
+      <li><a class="secondary" href="index.html#aboutme">About</a></li>
     </ul>
-  </header>
+  </nav>
 
   <div class="paycrave">
     <div class="grid grid--full">
     </div> 
   </div>
 
-  <div class="grid grid--full">
-    <div class="grid__item one--two-fifths"></div>
-      <div class="grid__item one--one-fifth">
-        <h4>The Project</h4>
-      </div>
-    <div class="grid__item one--two-fifths"></div>  
+  <div>
+    <h4>The Project</h4>
   </div>
 
   <div class="grid grid--full">
-    <div class="grid__item one--one-sixth"></div>
-
-    <div class="grid__item one--four-sixths">
-      <p>Paycrave was also a project that I completed during my Bloc program. This consumer mobile app  allows users to discover nearby food trucks, and also select and purchase food items. As part of the requirements, users also needed to be able to view previous transactions, and provide feedback for each food truck they purchased from. To get me started, I was provided with a style guide (which I later revised) and logo.</p>
+  <div class="grid__item push--one--one-sixth one--four-sixths">
+      <p>Paycrave is a conceptual iOS app developed during my Bloc program. This consumer mobile app  allows users to discover nearby food trucks, and also select and purchase food items. As part of the requirements, users also needed to be able to view previous transactions, and provide feedback for each food truck they purchased from. To get me started, I was provided with a style guide (which I later revised) and logo.</p>
     </div>
+  </div>
 
-    <div class="grid__item one--one-sixth"></div>
+  <div>
+    <h5>User Personas</h5>  
   </div>
 
   <div class="grid grid--full">
-    <div class="grid__item one--two-fifths"></div>
-      <div class="grid__item one--one-fifth">
-        <h5>User Personas</h5>
-      </div>
-    <div class="grid__item one--two-fifths"></div>  
-  </div>
-
-  <div class="grid grid--full">
-    <div class="grid__item one--one-sixth"></div>
-      <div class="grid__item one--four-sixths">
+    <div class="grid__item push--one--one-sixth one--four-sixths">
         <img class="show" src="images/Paycrave_UserStories2.jpg">
       </div>
     <div class="grid__item one--one-sixth"></div>  
   </div>
 
   <div class="grid grid--full">
-    <div class="grid__item one--one-sixth"></div>
-
-    <div class="grid__item one--four-sixths">
-      <p>The development of user personas helped to clarify the needs of the app users and to better determine what the flow should look and feel like. I was provided with five user stories to start to understand the customer:</p>
+  <div class="grid__item push--one--one-sixth one--four-sixths">
+      <p>The development of user personas helped to clarify the needs of the app users and to better determine what the flow should look and feel like. Here are the user stories I was given:</p>
       <ul class="text_list">
           <li>As a user, I want to view food trucks near me on a map</li>
           <li>As a user, I want to select a truck, view details, and see a menu</li>
           <li>As a user, I want to create an account and view recent transactions</li>
-          <li>As a user, I want to choose items to purchase and pa for them using my phone</li>
+          <li>As a user, I want to choose items to purchase and pay for them using my phone</li>
           <li>As a user, I want to rate and review a food truck, and view other ratings and reviews</li>
       </ul>  
-      <p>Using these stories and combining them with the personas that I developed, I determined that the typical Paycrave user would most likely be an urban professional interested in quickly finding and ordering food over their lunch break. This would mean that timesaving features (like seeing the distance to trucks, and the ability to save payment information) would be important elements to help minimize the time required to place and order.</p>
+      <p>With these stories, I developed three personas and inferred that the typical Paycrave user would most likely be an urban professional interested in quickly finding and ordering food over their lunch break. This would mean that time saving features (like seeing the distance to trucks, and the ability to save payment information) would be important elements to help minimize the time required to place and order.</p>
     </div>
-    
-    <div class="grid__item one--one-sixth"></div>
+  </div>
+
+  <div>
+    <h5>Wireframes & User Flow</h5> 
   </div>
 
   <div class="grid grid--full">
-    <div class="grid__item one--one-quarter"></div>
-      <div class="grid__item one--two-quarters">
-        <h5>Wireframes & User Flow</h5>
-      </div>
-    <div class="grid__item one--one-quarter"></div>  
-  </div>
-
-  <div class="grid grid--full">
-    <div class="grid__item one--one-eighth"></div>
-      <div class="grid__item one--six-eighths">
+    <div class="grid__item push--one--one-eighth one--six-eighths">
         <img class="show" src="images/Paycrave_wireframe1.jpg">
-      </div>
-    <div class="grid__item one--one-eighth"></div>  
+      </div> 
   </div>
    
   <div class="grid grid--full">
-    <div class="grid__item one--one-sixth"></div>
-    <div class="grid__item one--four-sixths">
-      <p>Comparing trucks and menus meant that the user would not have an exactly straightforward flow. The user might go back and forth between several screens before making a decision. To combat any confusion as to where the user is in the program, I had initially intended to have all truck and menu information slide up from the bottom of the screen, while the ‘home’ map would always be visible in the background. This was later scrapped during design refinement as it didn’t provide enough room to comfortably display information and, ultimately, the continual movement of screens up and down would have been too visually disruptive in practice.</p>
+  <div class="grid__item push--one--one-sixth one--four-sixths">
+      <p>To combat any confusion as to where the user is in the program, I had initially intended to have all truck and menu information slide up from the bottom of the screen, keeping the ‘home’ map always visible in the background. This was later scrapped during design refinement as it didn’t provide enough room to comfortably display information and, ultimately, the continual movement of screens up and down would have been too visually disruptive. Using full-screen truck, menu, and account pages gave more space for information, and three navigation items at the bottom of the screen allowed users to jump anywhere in the app that they wanted. In a few instances where this might send a user to a different section entirely, I used a 'back' at the top of the screen to provide a quick way to go back one step.</p>
     </div>
-
-    <div class="grid__item one--one-sixth"></div>
   </div>
 
   <div class="grid grid--full">
-    <div class="grid__item one--one-eighth"></div>
-      <div class="grid__item one--six-eighths">
+    <div class="grid__item push--one--one-eighth one--six-eighths">
         <img class="show" src="images/Paycrave_Wireframe2.jpg">
       </div>
-    <div class="grid__item one--one-eighth"></div>  
   </div>
    
   <div class="grid grid--full">
-    <div class="grid__item one--one-sixth"></div>
-    <div class="grid__item one--four-sixths">
-      <p>One of the more challenging user flow sequences was for payment. My first flow (seen above) felt too complicated, and the several steps would (most likely) be frustrating for the users. I revised this sequence several times, each time trying to reduce the user actions, and make the checkout process more streamlined and clear. The final version (seen below) reduces the order review, tipping, and payment process (assuming the user has saved payment options) into two simple steps.</p>
+  <div class="grid__item push--one--one-sixth one--four-sixths">
+      <p>One of the more challenging user flow sequences was for payment. My first flow (seen above) felt too complicated, and the several steps would (most likely) be frustrating for the users. I first removed an intial cart preview page, thinking that for such a simple kind of ordering it wouldn't really be necessary. I then provided for a way to tip using buttons instead of a drop-down. Allowing for users to keep a card on file also led to a quicker ordering process. The final version (seen below) reduces the order review, tipping, and payment process into two simple steps.</p>
     </div>
-
-    <div class="grid__item one--one-sixth"></div>
   </div>
 
   <div class="grid grid--full">
-    <div class="grid__item one--one-eighth"></div>
-      <div class="grid__item one--six-eighths">
+    <div class="grid__item push--one--one-eighth one--six-eighths">
         <img class="show" src="images/Paycrave_phones2.jpg">
-      </div>
-    <div class="grid__item one--one-eighth"></div>  
+      </div> 
+  </div>
+
+  <div>
+    <h5>Mock Up & User Testing</h5> 
   </div>
 
   <div class="grid grid--full">
-    <div class="grid__item one--one-third"></div>
-      <div class="grid__item one--one-third">
-        <h5>Mock Up & User Testing</h5>
-      </div>
-    <div class="grid__item one--one-third"></div>  
-  </div>
-
-  <div class="grid grid--full">
-    <div class="grid__item one--one-eighth"></div>
-      <div class="grid__item one--six-eighths">
+    <div class="grid__item push--one--one-eighth one--six-eighths">
         <img class="show" src="images/Paycrave_phones1.jpg">
-      </div>
-    <div class="grid__item one--one-eighth"></div>  
+      </div> 
   </div>
   
   <div class="grid grid--full">
-    <div class="grid__item one--one-sixth"></div>
-    <div class="grid__item one--four-sixths">  
-      <p>The hi-res mockup of the app (seen above) was created in Sketch. It was a this point that I abandoned the initial color palette (the provided colors were darker red, a red-orange color, green, and black) in favor of a more playful palette that still utilizes appetite-stimulating hues.</p>
-      <p>User testing in InVision revealed a few places in the checkout process where things could be further clarified. It also showed the instances where  the navigation was confusing or where there was more information than was required to complete each action. With this information, I changed a few of the icons, increased text size and, once again, revised the check-out process.</p>
-      <p>To preview and test the Paycrave app in InVision, click here.</p>
+  <div class="grid__item push--one--one-sixth one--four-sixths"> 
+      <p>The hi-res mockup of the app (seen above) was created in Sketch. It was at this point that I abandoned the initial color palette (the provided colors were darker red, a red-orange color, green, and black) in favor of a more playful palette that still utilizes appetite-stimulating hues.</p>
+      <p>User testing in InVision revealed a few places where interactions could be clarified. With the feedback, I changed a few icons (the cart, and added an edit button in the account screen), increased font sizes to develop a better hierarchy and, as mentioned above, further streamlined the check-out process.</p>
     </div>
     <div class="grid__item one--one-sixth"></div>
+  </div>
+
+   <div>
+    <h4>Recap</h4> 
+  </div>
+  
+  <div class="grid grid--full">
+  <div class="grid__item push--one--one-sixth one--four-sixths"> 
+      <p>In creating the design for Paycrave, I felt I had to make a decision to focus on a casual or more frequent food truck user. I directed my design more towards the frequent user; my thought being that a casual user wouldn't really have much use for an app if they are selectively purchasing or going on a more casual lunch. I don't think that focusing on both would have changed my approach too dramatically, but a few of the design decisions were made with this frequent user in mind, including the time to walk to the truck, and having such a streamlined system for checkout (again to help with the speed of ordering). One other challenge was to decide to work with, or give up on, the provided color palette. Giving up and creating my own was a great decision and helped really give the app the overall look that I was going for.</p>
+      <p>To preview and test the Paycrave app in InVision, <a href="http://invis.io/PA32J3BE8"> click here</a>.</p>
+    </div>
   </div>
   
 
 </body>
 
+<div class="hr"></div>
+
 <footer>
-    <div class="footer">
-      <div class="grid grid--full">
-        <div class="grid__item one--two-sixths">
-        <p> &copy 2015 Theresa Vermeersch</p></div>
-        <div class="grid__item one--three-sixths">
-        </div>  
-        <div class="grid__item one--one-sixth">
-          <img class= "icon-social" src="images/Social_LinkedIn.png" alt="LinkedIn Icon" class="social">
-          <img class= "icon-social" src="images/Social_Twitter.png" alt="Twitter Icon"class="social">
-        </div>
-      </div>
-    </div>   
+  <div class="footer" class="grid grid--full">
+    <div class="grid__item one--three-sixths">
+        <p> &copy 2015 Theresa Vermeersch</p>
+    </div>
+    <div class="grid__item one--two-sixths">
+    </div>  
+    <div class="grid__item one--one-sixth">
+        <a href="https://twitter.com/reeses711"><img class= "icon-social" src="images/twitter_teal.png" alt="Twitter Icon"class="social"></a>
+        <a href="https://www.linkedin.com/pub/theresa-hill/13/640/701"><img class= "icon-social" src="images/linkedin_teal.png" alt="LinkedIn Icon" class="social"></a>
+    </div>
+  </div>  
 </footer>
 
 </body>
