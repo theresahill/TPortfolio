@@ -1,41 +1,1516 @@
-/*
-Error: Invalid CSS after "    }": expected selector or at-rule, was "}"
-        on line 133 of scss/styles.scss
+/*------------------------------------*\
+    $CSSWIZARDRY-GRIDS
+\*------------------------------------*/
+/**
+ * CONTENTS
+ * INTRODUCTION.........How the grid system works.
+ * VARIABLES............Your settings.
+ * MIXINS...............Library mixins.
+ * GRID SETUP...........Build the grid structure.
+ * WIDTHS...............Build our responsive widths around our breakpoints.
+ * PUSH.................Push classes.
+ * PULL.................Pull classes.
+ */
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+.grid:before, .grid--full:before, .grid:after, .grid--full:after,
+.grid-uniform:before,
+.grid-uniform:after {
+  content: "";
+  display: table; }
+.grid:after, .grid--full:after,
+.grid-uniform:after {
+  clear: both; }
 
-128:     h1 {
-129:       position: absolute;
-130:       top:50%;
-131:       transform: translate(0, -50%)
-132:     }
-133: }
-134: 
-135: .background2 {
-136:   background-color: rgba(0,99,145,1);
-137:   padding: 40px;
-138: }
+/*------------------------------------*\
+    $GRID SETUP
+\*------------------------------------*/
+.grid, .grid--full,
+.grid-uniform {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: -24px; }
 
-Backtrace:
-scss/styles.scss:133
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1165:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:1101:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/scss/parser.rb:43:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:393:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/engine.rb:285:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:328:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.13/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"    }\": expected selector or at-rule, was \"}\"\A         on line 133 of scss/styles.scss\A \A 128:     h1 {\A 129:       position: absolute;\A 130:       top:50%;\A 131:       transform: translate(0, -50%)\A 132:     }\A 133: }\A 134: \A 135: .background2 {\A 136:   background-color: rgba(0,99,145,1);\A 137:   padding: 40px;\A 138: }"; }
+/* Gutterless grids have all the properties of regular grids, minus any spacing. */
+.grid--full {
+  margin-left: 0; }
+  .grid--full > .grid__item {
+    padding-left: 0; }
+
+.grid__item {
+  float: left;
+  min-height: 1px;
+  padding-left: 24px;
+  vertical-align: top;
+  width: 100%; }
+
+/*------------------------------------*\
+    $WIDTHS
+\*------------------------------------*/
+/**
+ * Create our width classes, prefixed by the specified namespace.
+ */
+/**
+ * Our regular, non-responsive width classes.
+ */
+/**
+ * Whole
+ */
+.one-whole {
+  width: 100%; }
+
+/**
+ * Halves
+ */
+.one-half, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
+  width: 50%; }
+
+/**
+ * Thirds
+ */
+.one-third, .two-sixths, .four-twelfths {
+  width: 33.333%; }
+
+.two-thirds, .four-sixths, .eight-twelfths {
+  width: 66.666%; }
+
+/**
+ * Quarters
+ */
+.one-quarter, .two-eighths, .three-twelfths {
+  width: 25%; }
+
+.three-quarters, .six-eighths, .nine-twelfths {
+  width: 75%; }
+
+/**
+ * Fifths
+ */
+.one-fifth, .two-tenths {
+  width: 20%; }
+
+.two-fifths, .four-tenths {
+  width: 40%; }
+
+.three-fifths, .six-tenths {
+  width: 60%; }
+
+.four-fifths, .eight-tenths {
+  width: 80%; }
+
+/**
+ * Sixths
+ */
+.one-sixth, .two-twelfths {
+  width: 16.666%; }
+
+.five-sixths, .ten-twelfths {
+  width: 83.333%; }
+
+/**
+ * Eighths
+ */
+.one-eighth {
+  width: 12.5%; }
+
+.three-eighths {
+  width: 37.5%; }
+
+.five-eighths {
+  width: 62.5%; }
+
+.seven-eighths {
+  width: 87.5%; }
+
+/**
+ * Tenths
+ */
+.one-tenth {
+  width: 10%; }
+
+.three-tenths {
+  width: 30%; }
+
+.seven-tenths {
+  width: 70%; }
+
+.nine-tenths {
+  width: 90%; }
+
+/**
+ * Twelfths
+ */
+.one-twelfth {
+  width: 8.333%; }
+
+.five-twelfths {
+  width: 41.666%; }
+
+.seven-twelfths {
+  width: 58.333%; }
+
+.eleven-twelfths {
+  width: 91.666%; }
+
+.show {
+  display: block !important; }
+
+.hide {
+  display: none !important; }
+
+.text-left {
+  text-align: left !important; }
+
+.text-right {
+  text-align: right !important; }
+
+.text-center {
+  text-align: center !important; }
+
+.left {
+  float: left !important; }
+
+.right {
+  float: right !important; }
+
+/**
+ * Our responsive classes, if we have enabled them.
+ */
+@media only screen and (min-width: 590px) {
+  /**
+   * Whole
+   */
+  .one--one-whole {
+    width: 100%; }
+
+  /**
+   * Halves
+   */
+  .one--one-half, .one--two-quarters, .one--three-sixths, .one--four-eighths, .one--five-tenths, .one--six-twelfths {
+    width: 50%; }
+
+  /**
+   * Thirds
+   */
+  .one--one-third, .one--two-sixths, .one--four-twelfths {
+    width: 33.333%; }
+
+  .one--two-thirds, .one--four-sixths, .one--eight-twelfths {
+    width: 66.666%; }
+
+  /**
+   * Quarters
+   */
+  .one--one-quarter, .one--two-eighths, .one--three-twelfths {
+    width: 25%; }
+
+  .one--three-quarters, .one--six-eighths, .one--nine-twelfths {
+    width: 75%; }
+
+  /**
+   * Fifths
+   */
+  .one--one-fifth, .one--two-tenths {
+    width: 20%; }
+
+  .one--two-fifths, .one--four-tenths {
+    width: 40%; }
+
+  .one--three-fifths, .one--six-tenths {
+    width: 60%; }
+
+  .one--four-fifths, .one--eight-tenths {
+    width: 80%; }
+
+  /**
+   * Sixths
+   */
+  .one--one-sixth, .one--two-twelfths {
+    width: 16.666%; }
+
+  .one--five-sixths, .one--ten-twelfths {
+    width: 83.333%; }
+
+  /**
+   * Eighths
+   */
+  .one--one-eighth {
+    width: 12.5%; }
+
+  .one--three-eighths {
+    width: 37.5%; }
+
+  .one--five-eighths {
+    width: 62.5%; }
+
+  .one--seven-eighths {
+    width: 87.5%; }
+
+  /**
+   * Tenths
+   */
+  .one--one-tenth {
+    width: 10%; }
+
+  .one--three-tenths {
+    width: 30%; }
+
+  .one--seven-tenths {
+    width: 70%; }
+
+  .one--nine-tenths {
+    width: 90%; }
+
+  /**
+   * Twelfths
+   */
+  .one--one-twelfth {
+    width: 8.333%; }
+
+  .one--five-twelfths {
+    width: 41.666%; }
+
+  .one--seven-twelfths {
+    width: 58.333%; }
+
+  .one--eleven-twelfths {
+    width: 91.666%; }
+
+  .one--show {
+    display: block !important; }
+
+  .one--hide {
+    display: none !important; }
+
+  .one--text-left {
+    text-align: left !important; }
+
+  .one--text-right {
+    text-align: right !important; }
+
+  .one--text-center {
+    text-align: center !important; }
+
+  .one--left {
+    float: left !important; }
+
+  .one--right {
+    float: right !important; } }
+@media only screen and (min-width: 768px) {
+  /**
+   * Whole
+   */
+  .two--one-whole {
+    width: 100%; }
+
+  /**
+   * Halves
+   */
+  .two--one-half, .two--two-quarters, .two--three-sixths, .two--four-eighths, .two--five-tenths, .two--six-twelfths {
+    width: 50%; }
+
+  /**
+   * Thirds
+   */
+  .two--one-third, .two--two-sixths, .two--four-twelfths {
+    width: 33.333%; }
+
+  .two--two-thirds, .two--four-sixths, .two--eight-twelfths {
+    width: 66.666%; }
+
+  /**
+   * Quarters
+   */
+  .two--one-quarter, .two--two-eighths, .two--three-twelfths {
+    width: 25%; }
+
+  .two--three-quarters, .two--six-eighths, .two--nine-twelfths {
+    width: 75%; }
+
+  /**
+   * Fifths
+   */
+  .two--one-fifth, .two--two-tenths {
+    width: 20%; }
+
+  .two--two-fifths, .two--four-tenths {
+    width: 40%; }
+
+  .two--three-fifths, .two--six-tenths {
+    width: 60%; }
+
+  .two--four-fifths, .two--eight-tenths {
+    width: 80%; }
+
+  /**
+   * Sixths
+   */
+  .two--one-sixth, .two--two-twelfths {
+    width: 16.666%; }
+
+  .two--five-sixths, .two--ten-twelfths {
+    width: 83.333%; }
+
+  /**
+   * Eighths
+   */
+  .two--one-eighth {
+    width: 12.5%; }
+
+  .two--three-eighths {
+    width: 37.5%; }
+
+  .two--five-eighths {
+    width: 62.5%; }
+
+  .two--seven-eighths {
+    width: 87.5%; }
+
+  /**
+   * Tenths
+   */
+  .two--one-tenth {
+    width: 10%; }
+
+  .two--three-tenths {
+    width: 30%; }
+
+  .two--seven-tenths {
+    width: 70%; }
+
+  .two--nine-tenths {
+    width: 90%; }
+
+  /**
+   * Twelfths
+   */
+  .two--one-twelfth {
+    width: 8.333%; }
+
+  .two--five-twelfths {
+    width: 41.666%; }
+
+  .two--seven-twelfths {
+    width: 58.333%; }
+
+  .two--eleven-twelfths {
+    width: 91.666%; }
+
+  .two--show {
+    display: block !important; }
+
+  .two--hide {
+    display: none !important; }
+
+  .two--text-left {
+    text-align: left !important; }
+
+  .two--text-right {
+    text-align: right !important; }
+
+  .two--text-center {
+    text-align: center !important; }
+
+  .two--left {
+    float: left !important; }
+
+  .two--right {
+    float: right !important; } }
+@media only screen and (min-width: 1025px) {
+  /**
+   * Whole
+   */
+  .three--one-whole {
+    width: 100%; }
+
+  /**
+   * Halves
+   */
+  .three--one-half, .three--two-quarters, .three--three-sixths, .three--four-eighths, .three--five-tenths, .three--six-twelfths {
+    width: 50%; }
+
+  /**
+   * Thirds
+   */
+  .three--one-third, .three--two-sixths, .three--four-twelfths {
+    width: 33.333%; }
+
+  .three--two-thirds, .three--four-sixths, .three--eight-twelfths {
+    width: 66.666%; }
+
+  /**
+   * Quarters
+   */
+  .three--one-quarter, .three--two-eighths, .three--three-twelfths {
+    width: 25%; }
+
+  .three--three-quarters, .three--six-eighths, .three--nine-twelfths {
+    width: 75%; }
+
+  /**
+   * Fifths
+   */
+  .three--one-fifth, .three--two-tenths {
+    width: 20%; }
+
+  .three--two-fifths, .three--four-tenths {
+    width: 40%; }
+
+  .three--three-fifths, .three--six-tenths {
+    width: 60%; }
+
+  .three--four-fifths, .three--eight-tenths {
+    width: 80%; }
+
+  /**
+   * Sixths
+   */
+  .three--one-sixth, .three--two-twelfths {
+    width: 16.666%; }
+
+  .three--five-sixths, .three--ten-twelfths {
+    width: 83.333%; }
+
+  /**
+   * Eighths
+   */
+  .three--one-eighth {
+    width: 12.5%; }
+
+  .three--three-eighths {
+    width: 37.5%; }
+
+  .three--five-eighths {
+    width: 62.5%; }
+
+  .three--seven-eighths {
+    width: 87.5%; }
+
+  /**
+   * Tenths
+   */
+  .three--one-tenth {
+    width: 10%; }
+
+  .three--three-tenths {
+    width: 30%; }
+
+  .three--seven-tenths {
+    width: 70%; }
+
+  .three--nine-tenths {
+    width: 90%; }
+
+  /**
+   * Twelfths
+   */
+  .three--one-twelfth {
+    width: 8.333%; }
+
+  .three--five-twelfths {
+    width: 41.666%; }
+
+  .three--seven-twelfths {
+    width: 58.333%; }
+
+  .three--eleven-twelfths {
+    width: 91.666%; }
+
+  .three--show {
+    display: block !important; }
+
+  .three--hide {
+    display: none !important; }
+
+  .three--text-left {
+    text-align: left !important; }
+
+  .three--text-right {
+    text-align: right !important; }
+
+  .three--text-center {
+    text-align: center !important; }
+
+  .three--left {
+    float: left !important; }
+
+  .three--right {
+    float: right !important; } }
+/*------------------------------------*\
+    $PUSH
+\*------------------------------------*/
+/**
+ * Push classes, to move grid items over to the right by certain amounts.
+ */
+[class*="push--"] {
+  position: relative; }
+
+/**
+ * Whole
+ */
+.push--one-whole {
+  left: 100%; }
+
+/**
+ * Halves
+ */
+.push--one-half, .push--two-quarters, .push--three-sixths, .push--four-eighths, .push--five-tenths, .push--six-twelfths {
+  left: 50%; }
+
+/**
+ * Thirds
+ */
+.push--one-third, .push--two-sixths, .push--four-twelfths {
+  left: 33.333%; }
+
+.push--two-thirds, .push--four-sixths, .push--eight-twelfths {
+  left: 66.666%; }
+
+/**
+ * Quarters
+ */
+.push--one-quarter, .push--two-eighths, .push--three-twelfths {
+  left: 25%; }
+
+.push--three-quarters, .push--six-eighths, .push--nine-twelfths {
+  left: 75%; }
+
+/**
+ * Fifths
+ */
+.push--one-fifth, .push--two-tenths {
+  left: 20%; }
+
+.push--two-fifths, .push--four-tenths {
+  left: 40%; }
+
+.push--three-fifths, .push--six-tenths {
+  left: 60%; }
+
+.push--four-fifths, .push--eight-tenths {
+  left: 80%; }
+
+/**
+ * Sixths
+ */
+.push--one-sixth, .push--two-twelfths {
+  left: 16.666%; }
+
+.push--five-sixths, .push--ten-twelfths {
+  left: 83.333%; }
+
+/**
+ * Eighths
+ */
+.push--one-eighth {
+  left: 12.5%; }
+
+.push--three-eighths {
+  left: 37.5%; }
+
+.push--five-eighths {
+  left: 62.5%; }
+
+.push--seven-eighths {
+  left: 87.5%; }
+
+/**
+ * Tenths
+ */
+.push--one-tenth {
+  left: 10%; }
+
+.push--three-tenths {
+  left: 30%; }
+
+.push--seven-tenths {
+  left: 70%; }
+
+.push--nine-tenths {
+  left: 90%; }
+
+/**
+ * Twelfths
+ */
+.push--one-twelfth {
+  left: 8.333%; }
+
+.push--five-twelfths {
+  left: 41.666%; }
+
+.push--seven-twelfths {
+  left: 58.333%; }
+
+.push--eleven-twelfths {
+  left: 91.666%; }
+
+@media only screen and (min-width: 590px) {
+  /**
+   * Whole
+   */
+  .push--one--one-whole {
+    left: 100%; }
+
+  /**
+   * Halves
+   */
+  .push--one--one-half, .push--one--two-quarters, .push--one--three-sixths, .push--one--four-eighths, .push--one--five-tenths, .push--one--six-twelfths {
+    left: 50%; }
+
+  /**
+   * Thirds
+   */
+  .push--one--one-third, .push--one--two-sixths, .push--one--four-twelfths {
+    left: 33.333%; }
+
+  .push--one--two-thirds, .push--one--four-sixths, .push--one--eight-twelfths {
+    left: 66.666%; }
+
+  /**
+   * Quarters
+   */
+  .push--one--one-quarter, .push--one--two-eighths, .push--one--three-twelfths {
+    left: 25%; }
+
+  .push--one--three-quarters, .push--one--six-eighths, .push--one--nine-twelfths {
+    left: 75%; }
+
+  /**
+   * Fifths
+   */
+  .push--one--one-fifth, .push--one--two-tenths {
+    left: 20%; }
+
+  .push--one--two-fifths, .push--one--four-tenths {
+    left: 40%; }
+
+  .push--one--three-fifths, .push--one--six-tenths {
+    left: 60%; }
+
+  .push--one--four-fifths, .push--one--eight-tenths {
+    left: 80%; }
+
+  /**
+   * Sixths
+   */
+  .push--one--one-sixth, .push--one--two-twelfths {
+    left: 16.666%; }
+
+  .push--one--five-sixths, .push--one--ten-twelfths {
+    left: 83.333%; }
+
+  /**
+   * Eighths
+   */
+  .push--one--one-eighth {
+    left: 12.5%; }
+
+  .push--one--three-eighths {
+    left: 37.5%; }
+
+  .push--one--five-eighths {
+    left: 62.5%; }
+
+  .push--one--seven-eighths {
+    left: 87.5%; }
+
+  /**
+   * Tenths
+   */
+  .push--one--one-tenth {
+    left: 10%; }
+
+  .push--one--three-tenths {
+    left: 30%; }
+
+  .push--one--seven-tenths {
+    left: 70%; }
+
+  .push--one--nine-tenths {
+    left: 90%; }
+
+  /**
+   * Twelfths
+   */
+  .push--one--one-twelfth {
+    left: 8.333%; }
+
+  .push--one--five-twelfths {
+    left: 41.666%; }
+
+  .push--one--seven-twelfths {
+    left: 58.333%; }
+
+  .push--one--eleven-twelfths {
+    left: 91.666%; } }
+@media only screen and (min-width: 768px) {
+  /**
+   * Whole
+   */
+  .push--two--one-whole {
+    left: 100%; }
+
+  /**
+   * Halves
+   */
+  .push--two--one-half, .push--two--two-quarters, .push--two--three-sixths, .push--two--four-eighths, .push--two--five-tenths, .push--two--six-twelfths {
+    left: 50%; }
+
+  /**
+   * Thirds
+   */
+  .push--two--one-third, .push--two--two-sixths, .push--two--four-twelfths {
+    left: 33.333%; }
+
+  .push--two--two-thirds, .push--two--four-sixths, .push--two--eight-twelfths {
+    left: 66.666%; }
+
+  /**
+   * Quarters
+   */
+  .push--two--one-quarter, .push--two--two-eighths, .push--two--three-twelfths {
+    left: 25%; }
+
+  .push--two--three-quarters, .push--two--six-eighths, .push--two--nine-twelfths {
+    left: 75%; }
+
+  /**
+   * Fifths
+   */
+  .push--two--one-fifth, .push--two--two-tenths {
+    left: 20%; }
+
+  .push--two--two-fifths, .push--two--four-tenths {
+    left: 40%; }
+
+  .push--two--three-fifths, .push--two--six-tenths {
+    left: 60%; }
+
+  .push--two--four-fifths, .push--two--eight-tenths {
+    left: 80%; }
+
+  /**
+   * Sixths
+   */
+  .push--two--one-sixth, .push--two--two-twelfths {
+    left: 16.666%; }
+
+  .push--two--five-sixths, .push--two--ten-twelfths {
+    left: 83.333%; }
+
+  /**
+   * Eighths
+   */
+  .push--two--one-eighth {
+    left: 12.5%; }
+
+  .push--two--three-eighths {
+    left: 37.5%; }
+
+  .push--two--five-eighths {
+    left: 62.5%; }
+
+  .push--two--seven-eighths {
+    left: 87.5%; }
+
+  /**
+   * Tenths
+   */
+  .push--two--one-tenth {
+    left: 10%; }
+
+  .push--two--three-tenths {
+    left: 30%; }
+
+  .push--two--seven-tenths {
+    left: 70%; }
+
+  .push--two--nine-tenths {
+    left: 90%; }
+
+  /**
+   * Twelfths
+   */
+  .push--two--one-twelfth {
+    left: 8.333%; }
+
+  .push--two--five-twelfths {
+    left: 41.666%; }
+
+  .push--two--seven-twelfths {
+    left: 58.333%; }
+
+  .push--two--eleven-twelfths {
+    left: 91.666%; } }
+@media only screen and (min-width: 1025px) {
+  /**
+   * Whole
+   */
+  .push--three--one-whole {
+    left: 100%; }
+
+  /**
+   * Halves
+   */
+  .push--three--one-half, .push--three--two-quarters, .push--three--three-sixths, .push--three--four-eighths, .push--three--five-tenths, .push--three--six-twelfths {
+    left: 50%; }
+
+  /**
+   * Thirds
+   */
+  .push--three--one-third, .push--three--two-sixths, .push--three--four-twelfths {
+    left: 33.333%; }
+
+  .push--three--two-thirds, .push--three--four-sixths, .push--three--eight-twelfths {
+    left: 66.666%; }
+
+  /**
+   * Quarters
+   */
+  .push--three--one-quarter, .push--three--two-eighths, .push--three--three-twelfths {
+    left: 25%; }
+
+  .push--three--three-quarters, .push--three--six-eighths, .push--three--nine-twelfths {
+    left: 75%; }
+
+  /**
+   * Fifths
+   */
+  .push--three--one-fifth, .push--three--two-tenths {
+    left: 20%; }
+
+  .push--three--two-fifths, .push--three--four-tenths {
+    left: 40%; }
+
+  .push--three--three-fifths, .push--three--six-tenths {
+    left: 60%; }
+
+  .push--three--four-fifths, .push--three--eight-tenths {
+    left: 80%; }
+
+  /**
+   * Sixths
+   */
+  .push--three--one-sixth, .push--three--two-twelfths {
+    left: 16.666%; }
+
+  .push--three--five-sixths, .push--three--ten-twelfths {
+    left: 83.333%; }
+
+  /**
+   * Eighths
+   */
+  .push--three--one-eighth {
+    left: 12.5%; }
+
+  .push--three--three-eighths {
+    left: 37.5%; }
+
+  .push--three--five-eighths {
+    left: 62.5%; }
+
+  .push--three--seven-eighths {
+    left: 87.5%; }
+
+  /**
+   * Tenths
+   */
+  .push--three--one-tenth {
+    left: 10%; }
+
+  .push--three--three-tenths {
+    left: 30%; }
+
+  .push--three--seven-tenths {
+    left: 70%; }
+
+  .push--three--nine-tenths {
+    left: 90%; }
+
+  /**
+   * Twelfths
+   */
+  .push--three--one-twelfth {
+    left: 8.333%; }
+
+  .push--three--five-twelfths {
+    left: 41.666%; }
+
+  .push--three--seven-twelfths {
+    left: 58.333%; }
+
+  .push--three--eleven-twelfths {
+    left: 91.666%; } }
+/*------------------------------------*\
+    $PULL
+\*------------------------------------*/
+/**
+ * Pull classes, to move grid items back to the left by certain amounts.
+ */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+html,
+body {
+  height: 100%; }
+
+/* Fonts */
+h1 {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 36px;
+  color: black;
+  font-weight: 300;
+  text-align: center; }
+
+h2 {
+  font-family: 'Oxygen', sans-serif;
+  font-style: bold;
+  font-size: 24px;
+  color: #ffffff;
+  margin-left: 30px;
+  margin-bottom: 5px; }
+
+h3 {
+  font-family: 'Oxygen';
+  font-size: 12px;
+  color: #fee72c;
+  margin-left: 30px;
+  font-weight: 300;
+  line-height: 160%;
+  text-transform: uppercase;
+  margin-top: 0px;
+  letter-spacing: .5px; }
+
+h4 {
+  font-family: 'Oxygen';
+  font-size: 30px;
+  color: black;
+  text-align: center; }
+
+h5 {
+  font-family: 'Raleway';
+  font-size: 24px;
+  font-weight: 500;
+  color: black;
+  text-align: center; }
+
+p {
+  font-family: 'Merriweather';
+  font-size: 16px;
+  color: black;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-weight: 300;
+  line-height: 31px; }
+
+.cover {
+  color: #ffffff; }
+
+a {
+  text-decoration: none;
+  align-content: center; }
+
+.home {
+  color: #ffffff; }
+
+.secondary {
+  color: black; }
+
+.secondary:hover {
+  color: #27b0ae; }
+
+.link {
+  color: #27b0ae; }
+
+/* Lists */
+.inline li {
+  display: inline;
+  text-decoration: none;
+  font-family: 'Raleway';
+  font-size: 20px;
+  font-weight: 300;
+  color: black;
+  padding: 10px; }
+
+.text_list {
+  font-family: 'Merriweather';
+  font-size: 16px;
+  color: black;
+  font-weight: 300;
+  line-height: 190%;
+  padding-left: 48px; }
+
+/*Background Colors */
+.ombre {
+  padding: 40px; }
+
+.background1 {
+  background-size: cover;
+  height: 350px;
+  position: relative; }
+  .background1 h1 {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%); }
+
+.background2 {
+  background-color: #006391;
+  padding: 40px; }
+
+.background3 {
+  background-color: #29799e;
+  padding: 40px; }
+
+.background4 {
+  background-color: #1492a3;
+  padding: 40px; }
+
+.background5 {
+  background-color: #27b0ae;
+  padding: 40px; }
+
+/* Images */
+.profile1 {
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  top: 25%;
+  left: 140px; }
+
+.profile2 {
+  height: 250px;
+  float: right;
+  margin: 50px; }
+
+.teaser {
+  width: 450px;
+  padding: 30px; }
+
+.surf {
+  background-image: url("../Images/surf.jpg");
+  background-size: cover;
+  height: 450px;
+  background-position: center; }
+
+.jottly {
+  background-image: url("../Images/JottlyHeader.jpg");
+  background-size: cover;
+  height: 400px;
+  background-position: center; }
+
+.paycrave {
+  background-image: url("../Images/Paycraveheader2.jpg");
+  background-size: cover;
+  height: 450px;
+  background-position: center; }
+
+.jumpstart {
+  background-image: url("../Images/JumpstartHeader.jpg");
+  background-size: cover;
+  height: 450px;
+  background-position: center; }
+
+.show {
+  width: 100%;
+  margin: 10px; }
+
+.footer {
+  padding-left: 10px;
+  padding-right: 30px; }
+
+.icon-social {
+  width: 25px;
+  height: 25px;
+  margin: 10px 0 0 0;
+  float: right;
+  padding: 2px; }
+
+/* Buttons & Lines */
+.btn {
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 10px;
+  border: solid #ffffff 1px;
+  font-family: Merriweather;
+  color: #ffffff;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  font-size: 13px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-top: 30px;
+  margin-left: 27px; }
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none; }
+
+.hr {
+  color: #c7c6c7;
+  background: #c7c6c7;
+  width: 100%;
+  height: 1px; }
+
+/*# sourceMappingURL=styles.css.map */
