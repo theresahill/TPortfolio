@@ -1413,7 +1413,7 @@ a {
   .background1 h1 {
     position: absolute;
     top: 50%;
-    transform: translate(25%, -70%); }
+    transform: translate(50%, -70%); }
 
 .background2 {
   background-color: #006391;
