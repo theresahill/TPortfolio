@@ -1443,16 +1443,13 @@ a {
   left: 140px; }
 
 .profile2 {
-  height: 300px;
+  height: 250px;
+  float: right;
   margin: 50px; }
 
 .teaser {
-  width: 550px;
+  width: 450px;
   padding: 30px; }
-
-.teaser2 {
-  width: 300px;
-  padding: 40px; }
 
 .surf {
   background-image: url("../Images/surf.jpg");
@@ -1519,4 +1516,4 @@ a {
   width: 100%;
   height: 1px; }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=style.css.map */
