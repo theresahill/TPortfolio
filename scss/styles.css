@@ -1443,11 +1443,12 @@ a {
   left: 140px; }
 
 .profile2 {
-  height: 300px;
-  margin: 50px; }
+  width: 100%;
+  padding-top: 50px;
+  padding: 20px; }
 
 .teaser {
-  width: 550px;
+  width: 100%;
   padding: 30px; }
 
 .teaser2 {
