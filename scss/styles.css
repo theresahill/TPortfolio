@@ -1479,9 +1479,20 @@ a {
   height: 450px;
   background-position: center; }
 
+.homechef {
+  background-image: url("../Images/HomeChefBackground.jpg");
+  background-size: cover;
+  height: 450px;
+  background-position: center; }
+
+.well {
+  background-image: url("../Images/well.jpg");
+  background-size: cover;
+  height: 450px;
+  background-position: center; }
+
 .show {
-  width: 100%;
-  margin: 10px; }
+  width: 100%; }
 
 .footer {
   padding-left: 10px;
